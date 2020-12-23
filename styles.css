@@ -1,0 +1,50 @@
+header {
+    color: rgb(70, 77, 64);
+    -webkit-text-stroke: 1px rgb(156, 5, 5);
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+}
+
+body {
+    background-color: rgb(12, 46, 46);
+    align-content: center;
+}
+
+button {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 200px;
+    display: block;
+    margin-top: 25px;
+    font-family: 'Cinzel', serif;
+    color: rgb(70, 77, 64);
+    -webkit-text-stroke: 1px rgb(156, 5, 5);
+    background-color: transparent;
+    font-size: 1.5em;
+}
+
+
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    border: none;
+    display: block;
+    width: 800px;
+    background-image: url("https://i.imgur.com/M5fwOPz.jpg");
+}
+
+#myCanvas {
+    border: 1px black;
+}
+/*https://i.dlpng.com/static/png/6354616_preview.png
+    https://icon2.cleanpng.com/20180420/dqq/kisspng-archer-2d-animation-character-cartoon-drawing-running-boy-5ada32c811a703.0501579815242492880723.jpg
+*/
