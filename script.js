@@ -3,22 +3,21 @@ console.log("we good bro")
 var ctx = game.getContext('2d')
 let movementDisplay = movement
 var movement = 10
+var image = document.getElementById("archer")
+ctx.drawImage(image, 10, 10,)
 
 
-
-function Hero(x, y, color, width, height) {
+function Hero(image, x, y) {
+    this.image = image
     this.x = x
     this.y = y
-    this.color = color
-    this.width = width
-    this.height = height
     this.render = function() {
-        ctx.fillStyle = this.color
-        ctx.fillRect(this.x, this.y, this.width, this.height)
+        ctx.drawImage(this.image, this.x, this.y)
     }
 }
 
-let hero = new Hero(400, 400, "blue", 10, 20)
+let hero = new Hero(image, 100, 200,)
+
 
 
 let gameLoop = setInterval(() => {
@@ -44,6 +43,10 @@ switch(e.key) {
 }
 }
 document.addEventListener("keydown", movementHero)
+
+var arrow = document.getElementById("arrow")
+
+
 
 
 
