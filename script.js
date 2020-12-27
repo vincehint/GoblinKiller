@@ -4,6 +4,7 @@ var ctx = game.getContext('2d')
 let movementDisplay = movement
 var movement = 10
 var image = document.getElementById("archer")
+var image2 = document.getElementById("goblin")
 ctx.drawImage(image, 10, 10,)
 
 
@@ -18,6 +19,16 @@ function Hero(image, x, y) {
 
 let hero = new Hero(image, 100, 200,)
 
+function Goblin(image2, x, y,) {
+    this.image = image2
+    this.x = x
+    this.y = y
+    this.render = function() {
+        ctx.drawImage(this.image, this.x, this.y)
+    }
+}
+
+let goblin = new Goblin(image2, 350, 100,)
 
 
 let gameLoop = setInterval(() => {
