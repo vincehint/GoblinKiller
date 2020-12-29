@@ -8,16 +8,55 @@ var image = new Image()
 image.src = "https://webstockreview.net/images/archer-clipart-archery-2.png"
 //var image2 = document.getElementById("goblin")
 var image2 = new Image()
-image2.src = "https://i.dlpng.com/static/png/6354616_preview.png"
+image2.src = "https://gameartpartners.com/wp-content/uploads/edd/2015/06/goblin_featured.png"
 //var arrow = document.getElementById("arrow")
+var image3 = new Image()
+image3.src = "https://images.vexels.com/media/users/3/127666/isolated/preview/297c657a0a4a5093675abc9963b76711-flat-dirt-arrow-by-vexels.png"
+
+
+let bullet = []
+
+function Bullet(image, x, y, width, height, direction) {
+    this.image = image
+    this.x = x
+    this.y = y
+    this.width = width
+    this.height = height
+    this.direction = direction
+    this.render = function() {
+        
+        ctx.fillRect(this.image3, this.x, this.y, this.width, this.height, this.direction)
+    }
+}
+
+
+function shootBullets() {
+    console.log("Pew")
+    bullet.push(new Bullet (image3, hero.x, hero.y, 5, 5, 2, 3, hero.direction))
+    this.update = function() {
+        if (bullet.y<this.y){
+            this.y-=1
+        }
+        if (bullet.y>this.y){
+            this.y+=1
+        }
+        if (bullet.x<this.x){
+            this.x-=1
+        }
+        if (bullet.x>this.x){
+            this.x+=1
+        }
+    }
+}
 
 
 function Hero(image, x, y, ) {
     this.image = image
     this.x = x
     this.y = y
+    this.direction = "right"
     this.render = function() {
-        ctx.drawImage(this.image, this.x, this.y, 50, 50)
+        ctx.drawImage(this.image, this.x, this.y, 50, 75)
     }
 }
 
@@ -43,7 +82,7 @@ function Goblin(image, x, y) {
         }
     }
     this.render = function() {
-        ctx.drawImage(this.image, this.x, this.y, 40, 40)
+        ctx.drawImage(this.image, this.x, this.y, 60, 60)
     }
 }
 
@@ -61,22 +100,34 @@ let gameLoop = setInterval(() => {
         goblins[i].update()
         goblins[i].render()
     }
+    for (let i =0; i<bullet.length; i++) {
+        shootBullets[i].update()
+        shootBullets[i].render()
+    }
 },100)
 
 function movementHero(e) {
 switch(e.key) {
+    case 'Enter':
+        shootBullets()
+        break
     case 'w': 
         hero.y-=movement
+        hero.direction="up"
         break
     case 'a':
         hero.x-=movement
+        hero.direction="left"
         break
     case 's':
         hero.y+=movement
+        hero.direction="down"
         break
     case 'd':
         hero.x+=movement
+        hero.direction="right"
         break
+    
 }
 }
 document.addEventListener("keydown", movementHero)
