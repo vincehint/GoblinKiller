@@ -16,6 +16,11 @@ image3.src = "https://images.vexels.com/media/users/3/127666/isolated/preview/29
 
 let bullet = []
 
+//function rotate(image, direction) {
+//    if hero.direction == "up" 
+
+//}
+
 function Bullet(image, x, y, width, height, direction) {
     this.image = image
     this.x = x
@@ -23,30 +28,32 @@ function Bullet(image, x, y, width, height, direction) {
     this.width = width
     this.height = height
     this.direction = direction
+    this.update = function() {
+        if (this.direction=="up"){
+            this.y-=40
+            this.image.style.transform = "rotate(90deg)"
+        }
+        if (this.direction=="down"){
+            this.y+=40
+        }
+        if (this.direction=="left"){
+            this.x-=40
+        }
+        if (this.direction=="right"){
+            this.x+=40
+        }
+    }
     this.render = function() {
         
-        ctx.fillRect(this.image3, this.x, this.y, this.width, this.height, this.direction)
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
     }
 }
 
 
 function shootBullets() {
     console.log("Pew")
-    bullet.push(new Bullet (image3, hero.x, hero.y, 5, 5, 2, 3, hero.direction))
-    this.update = function() {
-        if (bullet.y<this.y){
-            this.y-=1
-        }
-        if (bullet.y>this.y){
-            this.y+=1
-        }
-        if (bullet.x<this.x){
-            this.x-=1
-        }
-        if (bullet.x>this.x){
-            this.x+=1
-        }
-    }
+    bullet.push(new Bullet (image3, hero.x, hero.y, 100, 100, hero.direction))
+    console.log(bullet)
 }
 
 
@@ -56,7 +63,7 @@ function Hero(image, x, y, ) {
     this.y = y
     this.direction = "right"
     this.render = function() {
-        ctx.drawImage(this.image, this.x, this.y, 50, 75)
+        ctx.drawImage(this.image, this.x, this.y, 90, 125)
     }
 }
 
@@ -82,7 +89,7 @@ function Goblin(image, x, y) {
         }
     }
     this.render = function() {
-        ctx.drawImage(this.image, this.x, this.y, 60, 60)
+        ctx.drawImage(this.image, this.x, this.y, 100, 100)
     }
 }
 
@@ -101,29 +108,37 @@ let gameLoop = setInterval(() => {
         goblins[i].render()
     }
     for (let i =0; i<bullet.length; i++) {
-        shootBullets[i].update()
-        shootBullets[i].render()
+        bullet[i].update()
+        bullet[i].render()
     }
 },100)
+
+
+
+
 
 function movementHero(e) {
 switch(e.key) {
     case 'Enter':
         shootBullets()
         break
-    case 'w': 
+    case 'w':
+        up = true 
         hero.y-=movement
         hero.direction="up"
         break
     case 'a':
+        left = true
         hero.x-=movement
         hero.direction="left"
         break
     case 's':
+        down = true
         hero.y+=movement
         hero.direction="down"
         break
     case 'd':
+        right = true
         hero.x+=movement
         hero.direction="right"
         break
@@ -131,6 +146,21 @@ switch(e.key) {
 }
 }
 document.addEventListener("keydown", movementHero)
+
+let detectHit = () => {
+    // write the if statement to end all if statements
+    // if hero's right > ogre's left AND hero's left < ogre's right
+    // if hero's bottom > ogre's top && hero top < ogre bottom
+    if (
+      goblins.x == hero.x &&
+      goblins.y == hero.y 
+
+      ) {
+        // game over
+        hero.alive = false;
+        console.log("you died")
+      } 
+  }
 
 
 

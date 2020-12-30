@@ -39,7 +39,9 @@ canvas {
     border: none;
     display: block;
     width: 800px;
-    background-image: url("https://i.imgur.com/M5fwOPz.jpg");
+    background-image: url("https://i.pinimg.com/originals/32/6f/37/326f371b6fc91545b6a796073516fdcf.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #myCanvas {
