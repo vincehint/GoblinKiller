@@ -148,15 +148,11 @@ switch(e.key) {
 document.addEventListener("keydown", movementHero)
 
 let detectHit = () => {
-    // write the if statement to end all if statements
-    // if hero's right > ogre's left AND hero's left < ogre's right
-    // if hero's bottom > ogre's top && hero top < ogre bottom
+
     if (
       goblins.x == hero.x &&
       goblins.y == hero.y 
-
       ) {
-        // game over
         hero.alive = false;
         console.log("you died")
       } 
