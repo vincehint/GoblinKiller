@@ -7,8 +7,14 @@ var image = new Image()
 image.src = "https://webstockreview.net/images/archer-clipart-archery-2.png"
 var image2 = new Image()
 image2.src = "https://gameartpartners.com/wp-content/uploads/edd/2015/06/goblin_featured.png"
-var image3 = new Image()
-image3.src = "https://images.vexels.com/media/users/3/127666/isolated/preview/297c657a0a4a5093675abc9963b76711-flat-dirt-arrow-by-vexels.png"
+var arrowUp = new Image()
+arrowUp.src = "images/ArrowUp.png"
+var arrowDown = new Image()
+arrowDown.src = "images/ArrowDown.png"
+var arrowLeft = new Image()
+arrowLeft.src = "images/ArrowLeft.png"
+var arrowRight = new Image()
+arrowRight.src = "images/ArrowRight.png"
 let arrow = []
 
 function Hero(image, x, y, width, height ) {
@@ -60,28 +66,30 @@ function Arrow(image, x, y, width, height, direction) {
     this.direction = direction
     this.update = function() {
         if (this.direction=="up"){
-            arrow.src = 
+            arrowUp.src = "images/ArrowUp.png"
             this.y-=40
         }
         if (this.direction=="down"){
+            arrowUp.src = "images/ArrowDown.png"
             this.y+=40
         }
         if (this.direction=="left"){
+            arrowUp.src = "images/ArrowLeft.png"
             this.x-=40
         }
         if (this.direction=="right"){
+            arrowUp.src = "images/ArrowRight.png"
             this.x+=40
         }
     }
-    this.render = function() {
-        
+    this.render = function() {  
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
     }
 }
 
 function looseArrows() {
     console.log("Thup")
-    arrow.push(new Arrow (image3, hero.x, hero.y, 100, 100, hero.direction))
+    arrow.push(new Arrow (arrowUp, hero.x, hero.y, 100, 100, hero.direction))
     console.log(arrow)
 }
 
