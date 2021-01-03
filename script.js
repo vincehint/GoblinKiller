@@ -86,18 +86,21 @@ function looseArrows() {
 }
 
 let hero = new Hero(image, 100, 200)
-
+let goblin = new Goblin
 let goblins = []
 
 for (let i = 0; i<5; i++) {
     goblins.push(new Goblin(image2, Math.random()*800, Math.random()*800, 80, 80))
 }
-console.log(goblins)
+
 
 let gameLoop = setInterval(() => {                                                                                                                                                                                                                                                                                                              
     ctx.clearRect(0, 0, game.width, game.height)
     hero.render()
+    //console.log(detectHit())
     for (let i =0; i<goblins.length; i++) {
+        let currentGoblin = goblins[i]
+        console.log(currentGoblin)
         var collide = detectHit(hero, goblins[i])
         if (collide) {
             hero.alive = false
@@ -144,14 +147,15 @@ switch(e.key) {
 }
 document.addEventListener("keydown", movementHero)
 
-let detectHit = (collision1, collision2) => {
+let detectHit = () => {
 
     if (
-        collision1.x + collision1.width >= collision2.x &&
-        collision1.x <= collision2.x + collision2.width &&
-        collision1.y <= collision2.y + collision2.height &&
-        collision1.y + collision1.height >= collision2.y
+        hero.x + hero.width >= goblin.x &&
+        hero.x <= goblin.x + goblin.width &&
+        hero.y <= goblin.y + goblin.height &&
+        hero.y + hero.height >= goblin.y
       ) {
+        console.log("hit")
         return true
       }
     return false 
