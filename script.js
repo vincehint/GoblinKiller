@@ -8,7 +8,7 @@ image.src = "https://webstockreview.net/images/archer-clipart-archery-2.png"
 var image2 = new Image()
 image2.src = "https://gameartpartners.com/wp-content/uploads/edd/2015/06/goblin_featured.png"
 var image3 = new Image()
-arrowleft.src = "ArrowLeft.png"
+image3.src = "https://images.vexels.com/media/users/3/127666/isolated/preview/297c657a0a4a5093675abc9963b76711-flat-dirt-arrow-by-vexels.png"
 let arrow = []
 
 function Hero(image, x, y, width, height ) {
@@ -81,7 +81,7 @@ function Arrow(image, x, y, width, height, direction) {
 
 function looseArrows() {
     console.log("Thup")
-    arrow.push(new Arrow (arrowleft, hero.x, hero.y, 100, 100, hero.direction))
+    arrow.push(new Arrow (image3, hero.x, hero.y, 100, 100, hero.direction))
     console.log(arrow)
 }
 
