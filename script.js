@@ -61,6 +61,7 @@ function Arrow(image, x, y, width, height, direction) {
     this.y = y
     this.width = width
     this.height = height
+    this.alive = true
     this.direction = direction
     this.update = function() {
         if (this.direction=="up"){
@@ -172,7 +173,7 @@ let detectHit = (hero, goblin) => {
     //console.log(arrow)
     //console.log(goblin)
     if (
-        goblin.x >= arrow.x &&
+        goblin.x >= arrow.x  &&
         arrow.x <= goblin.x + goblin.width &&
         arrow.y <= goblin.y &&
         arrow.y <= goblin.y + goblin.height
