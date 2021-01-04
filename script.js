@@ -108,23 +108,22 @@ let gameLoop = setInterval(() => {
         var collide = detectHit(hero, goblins[i])
         if (collide) {
             hero.alive = false
-            console.log("Ouch!")
+            // console.log("Ouch!")
         }
         if (goblins[i].alive) {
             goblins[i].update()
             goblins[i].render()
-        }
-    }   
-    for (let i =0; i<arrow.length; i++) {
-        arrow[i].update()
-        arrow[i].render()
-        var shot = detectHit2(arrow, goblins[i])
-        if (shot) {
-            goblins[i] = false
-            console.log("biff")
+        }   
+       for (let l =0; l<arrow.length; l++) {
+            arrow[l].update()
+            arrow[l].render()
+            var shot = detectHit2(arrow[l], goblins[i])
+            if (shot) {
+               goblins[i] = false
+            //console.log("biff")
         }
     }    
-},100)
+}},100)
 
 function movementHero(e) {
 switch(e.key) {
@@ -157,7 +156,7 @@ switch(e.key) {
 document.addEventListener("keydown", movementHero)
 
 let detectHit = (hero, goblin) => {
-    console.log(hero)
+    //console.log(hero)
     if (
         hero.x + hero.width >= goblin.x &&
         hero.x <= goblin.x + goblin.width &&
@@ -170,15 +169,19 @@ let detectHit = (hero, goblin) => {
   }
 
   let detectHit2 = (arrow, goblin) => {
-    console.log(arrow)
+    //console.log(arrow)
+    //console.log(goblin)
     if (
-        goblin.x + goblin.width >= arrow.x &&
-        goblin.x <= arrow.x + arrow.width &&
-        goblin.y <= arrow.y + arrow.height &&
-        goblin.y + goblin.height >= arrow.y
+        goblin.x >= arrow.x &&
+        arrow.x <= goblin.x + goblin.width &&
+        arrow.y <= goblin.y &&
+        arrow.y <= goblin.y + goblin.height
       ) {
-        console.log("ha!")
+        //console.log("ha!")
+        console.log("Hello")
         return true
       }
     return false 
   }
+
+  

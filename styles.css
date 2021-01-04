@@ -41,7 +41,7 @@ canvas {
     border: none;
     display: block;
     width: 800px;
-    background-image: url("/home/user/Desktop/general_assembly/unit_1/ProjectP1/images/background1.jpg");
+    background-image: url("./images/background1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
