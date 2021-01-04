@@ -1,5 +1,3 @@
-console.log("we good bro")
-
 var ctx = game.getContext('2d')
 let movementDisplay = movement
 var movement = 10
@@ -17,7 +15,7 @@ var arrowRight = new Image()
 arrowRight.src = "images/ArrowRight.png"
 let arrow = []
 
-function Hero(image, x, y, width, height ) {
+function Hero(image, x, y, width, height) {
     this.image = image
     this.x = x
     this.y = y
@@ -88,12 +86,12 @@ function Arrow(image, x, y, width, height, direction) {
 }
 
 function looseArrows() {
-    console.log("Thup")
+    //console.log("Thup")
     arrow.push(new Arrow (arrowUp, hero.x, hero.y, 100, 100, hero.direction))
-    console.log(arrow)
+    //console.log(arrow)
 }
 
-let hero = new Hero(image, 100, 200)
+let hero = new Hero(image, 400, 400, 80, 125)
 let goblin = new Goblin
 let goblins = []
 
@@ -107,8 +105,6 @@ let gameLoop = setInterval(() => {
     hero.render()
     //console.log(detectHit())
     for (let i =0; i<goblins.length; i++) {
-        let currentGoblin = goblins[i]
-        console.log(currentGoblin)
         var collide = detectHit(hero, goblins[i])
         if (collide) {
             hero.alive = false
@@ -122,6 +118,11 @@ let gameLoop = setInterval(() => {
     for (let i =0; i<arrow.length; i++) {
         arrow[i].update()
         arrow[i].render()
+        var shot = detectHit2(arrow, goblins[i])
+        if (shot) {
+            goblins[i] = false
+            console.log("biff")
+        }
     }    
 },100)
 
@@ -155,15 +156,28 @@ switch(e.key) {
 }
 document.addEventListener("keydown", movementHero)
 
-let detectHit = () => {
-
+let detectHit = (hero, goblin) => {
+    console.log(hero)
     if (
         hero.x + hero.width >= goblin.x &&
         hero.x <= goblin.x + goblin.width &&
         hero.y <= goblin.y + goblin.height &&
         hero.y + hero.height >= goblin.y
       ) {
-        console.log("hit")
+        return true
+      }
+    return false 
+  }
+
+  let detectHit2 = (arrow, goblin) => {
+    console.log(arrow)
+    if (
+        goblin.x + goblin.width >= arrow.x &&
+        goblin.x <= arrow.x + arrow.width &&
+        goblin.y <= arrow.y + arrow.height &&
+        goblin.y + goblin.height >= arrow.y
+      ) {
+        console.log("ha!")
         return true
       }
     return false 
