@@ -1,13 +1,12 @@
 header {
-    color: rgb(0, 106, 90);
-    -webkit-text-stroke: 2.5px rgb(111, 0, 30);
+    color: rgb(109, 193, 181);
     font-size: 5em;
     text-align: center;
     font-family: 'Cinzel', serif;
 }
 
 body {
-    background-image: url("https://image.freepik.com/free-vector/green-grunge-background_1048-2791.jpg");
+    background-image: url("images/backgroundB.png");
     align-content: center;
 }
 
@@ -21,13 +20,12 @@ button {
     display: block;
     margin-top: 25px;
     font-family: 'Cinzel', serif;
-    color: rgb(0, 106, 90);
-    -webkit-text-stroke: 2px rgb(111, 0, 30);
+    color: rgb(1, 103, 101);
     background-color: transparent;
     font-size: 1.75em;
     border:rgba(121, 128, 128, 0.411) 1px solid;
     border-radius: 3px;
-    background-color: rgba(107, 0, 128, 0.666);
+    background-color: rgb(107, 0, 128);
 }
 
 button:focus {
@@ -46,7 +44,7 @@ canvas {
     border: none;
     display: block;
     width: 800px;
-    background-image: url("./images/backgroundB.png");
+    background-image: url("./images/background1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
