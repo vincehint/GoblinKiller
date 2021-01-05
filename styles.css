@@ -46,7 +46,7 @@ canvas {
     border: none;
     display: block;
     width: 800px;
-    background-image: url("./images/backgroundB.jpg");
+    background-image: url("./images/backgroundB.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
