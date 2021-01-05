@@ -198,7 +198,6 @@ switch(e.key) {
 }
 }
 
-
 let detectHit = (hero, goblin) => {
     //console.log(hero)
     if (
