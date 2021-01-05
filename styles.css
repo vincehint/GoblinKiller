@@ -6,7 +6,7 @@ header {
 }
 
 body {
-    background-image: url("images/backgroundB.png");
+    background-image: url("images/backgroundC.jpg");
     align-content: center;
 }
 
@@ -25,11 +25,11 @@ button {
     font-size: 1.75em;
     border:rgba(121, 128, 128, 0.411) 1px solid;
     border-radius: 3px;
-    background-color: rgb(107, 0, 128);
+    background-color: rgb(96, 2, 35);
 }
 
 button:focus {
-    border: rgba(191, 5, 113, 0.571) 3px solid;
+    border: rgba(101, 4, 38, 0.666) 3px solid;
 }
 
 
