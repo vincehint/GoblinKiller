@@ -1,13 +1,13 @@
 header {
-    color: rgb(40, 82, 3);
-    -webkit-text-stroke: 2.5px rgb(139, 11, 11);
+    color: rgb(0, 106, 90);
+    -webkit-text-stroke: 2.5px rgb(111, 0, 30);
     font-size: 5em;
     text-align: center;
     font-family: 'Cinzel', serif;
 }
 
 body {
-    background-color: rgb(5, 36, 36);
+    background-image: url("https://image.freepik.com/free-vector/green-grunge-background_1048-2791.jpg");
     align-content: center;
 }
 
@@ -21,8 +21,8 @@ button {
     display: block;
     margin-top: 25px;
     font-family: 'Cinzel', serif;
-    color: rgb(40, 82, 3);
-    -webkit-text-stroke: 2px rgb(139, 11, 11);
+    color: rgb(0, 106, 90);
+    -webkit-text-stroke: 2px rgb(111, 0, 30);
     background-color: transparent;
     font-size: 1.75em;
     border:rgba(121, 128, 128, 0.411) 1px solid;
