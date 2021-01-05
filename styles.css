@@ -29,6 +29,10 @@ button {
     border-radius: 3px;
 }
 
+button:focus {
+    border: rgba(191, 5, 113, 0.571) 3px solid;
+}
+
 
 
 canvas {
