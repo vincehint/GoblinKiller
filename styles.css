@@ -27,6 +27,7 @@ button {
     font-size: 1.75em;
     border:rgba(121, 128, 128, 0.411) 1px solid;
     border-radius: 3px;
+    background-color: rgba(107, 0, 128, 0.666);
 }
 
 button:focus {
