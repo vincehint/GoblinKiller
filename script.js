@@ -54,7 +54,7 @@ function Hero(image, x, y, width, height, direction) {
     this.render = function() {
         //ctx.fillStyle = "red"
         //ctx.fillRect(this.x, this.y, this.width, this.height)
-        ctx.drawImage(this.image, this.x, this.y, 80, 100)
+        ctx.drawImage(this.image, this.x, this.y, 100, 100)
     }
 }
 
